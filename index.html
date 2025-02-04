@@ -221,7 +221,7 @@
     <img src="https://github.com/gbtprestige/khacncrypto/raw/main/PNG%20KHAC%20LOGO.png" alt="KharYsma Logo" class="logo">
     
     <nav>
-        <a href="https://gbtprestige.github.io/khacncrypto/">HOME</a>
+        <a href="https://khacn.startarcoins.com">HOME</a>
         <a href="https://drive.google.com/file/d/1Ph8RjQMvJNVqwGSQyB4QBvCOqi9ThqRP/view?usp=sharing">WHITE PAPER FR</a>
         <a href="https://drive.google.com/file/d/1SCbRneGewDMKv6B-eYZTZNpDuGaK7iVX/view?usp=sharing">WHITE PAPER US</a>
         <a href="#">LEGAL OPINION</a>
@@ -338,7 +338,7 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
             try {
-                const response = await fetch('https://your-vercel-domain.vercel.app/api/chat', {
+                const response = await fetch('/.netlify/functions/api/chat', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -357,7 +357,7 @@
     }
 
     // Fetch des tendances
-    fetch('trending_keywords.json')
+    fetch('https://gbtprestige.github.io/khacncrypto/trending_keywords.json')
         .then(response => response.json())
         .then(data => {
             const trendsContainer = document.getElementById('trends');
