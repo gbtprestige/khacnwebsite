@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KharYsma Coins</title>
+    <meta name="description" content="Achetez, vendez et échangez KharYsma Coins (KHACN) sur notre plateforme sécurisée. Participez à notre airdrop et suivez les dernières tendances crypto sur Uniswap.">
+    <meta name="keywords" content="KharYsma Coins, KHACN, crypto, échange, airdrop, DeFi, Ethereum, Uniswap, Investir, Acheter, Vendre">
+    <!-- Manifest pour PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#001f4d">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #001f4d;
+            background-image: url('https://github.com/gbtprestige/khacncrypto/raw/main/1233.jpg');
+            background-size: cover;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+        header {
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 300px; /* Redimensionné à 2 fois la taille */
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: yellow;
+        }
+        .main-content {
+            padding: 20px;
+            text-align: left;
+        }
+        .trade-button {
+            background-color: yellow;
+            color: black;
+            padding: 20px;
+            border-radius: 50%;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+        .trade-button:hover {
+            transform: scale(1.1);
+        }
+        .tile {
+            background-color: lightgray;
+            border: 2px solid black;
+            color: black;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 150px; /* Redimensionné pour plus de visibilité */
+            font-weight: bold;
+        }
+        .trusted-partners, .audited-by {
+            margin: 20px 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        footer {
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            color: white;
+        }
+        footer a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: yellow;
+        }
+        .global-access {
+            color: #00f;
+            margin-top: 20px;
+        }
+        .video-container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border: none;
+        }
+        .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .chatbot-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        .chatbot-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: black;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+        .chatbot-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chatbot-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .chatbot-messages {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background-color: #111;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .chatbot-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid yellow;
+            border-radius: 5px;
+            background-color: #111;
+            color: white;
+        }
+        .chatbot-send {
+            width: 100%;
+            padding: 10px;
+            background-color: yellow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
+        .chatbot-send:hover {
+            background-color: #ffcc00;
+        }
+        @media (max-width: 768px) {
+            .trade-button {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+            .tile {
+                max-width: 100%;
+            }
+            .video-container iframe {
+                height: 300px;
+            }
+            .chatbot-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .chatbot-icon img {
+                width: 30px;
+                height: 30px;
+            }
+            .chatbot-container {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="https://github.com/gbtprestige/khacncrypto/raw/main/PNG%20KHAC%20LOGO.png" alt="KharYsma Logo" class="logo">
+    
+    <nav>
+        <a href="https://gbtprestige.github.io/khacncrypto/">HOME</a>
+        <a href="https://drive.google.com/file/d/1Ph8RjQMvJNVqwGSQyB4QBvCOqi9ThqRP/view?usp=sharing">WHITE PAPER FR</a>
+        <a href="https://drive.google.com/file/d/1SCbRneGewDMKv6B-eYZTZNpDuGaK7iVX/view?usp=sharing">WHITE PAPER US</a>
+        <a href="#">LEGAL OPINION</a>
+        <a href="https://startar-bronze.github.io/accueil.html">ABOUT US</a>
+        <a href="mailto:notairebtc@yahoo.fr">CONTACT</a>
+        <a href="https://kharysmataste.blogspot.com/">NEWS / LISTING</a>
+    </nav>
+    
+    <div id="google-translate-element" class="translate"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google-translate-element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</header>
+<main class="main-content">
+    <h1>YOU ARE IN THE RIGHT PLACE FOR BUY/SELL/SWAP TRADE KHARYSMA COINS (KHACN)</h1>
+    
+    <div class="trade-container">
+        <a href="https://app.uniswap.org/explore/tokens/ethereum/0x11c1b94294a7967092f747434dee4876eca5fd53?utm_source=share-tdp&utm_medium=web" class="trade-button">TRADE KHACN</a>
+    </div>
+    <div class="call-to-action" style="margin-top: 20px;">
+        <a href="https://forms.gle/m8fJN3fpqxiFpNee9" class="tile" style="background-color: yellow; color: black; text-decoration: none;">
+            <p>📈 Click and register to participate in airdrop!</p>
+        </a>
+    </div>
+    <div class="trusted-partners">
+        <h2>Trusted by:</h2>
+        <a href="https://startar-bronze.github.io/groupebusinesstherapie/" class="tile">GBT</a>
+        <a href="https://www.r-b-a.fr" class="tile">RBA Ltd</a>
+        <a href="https://gbtprestige.github.io" class="tile">X crypto Cap</a>
+    </div>
+    <div class="audited-by">
+        <h2>Audited by:</h2>
+        <a href="https://drive.google.com/file/d/1kBKthaMfs7VuTFkXeJiUacX8KKGlkYGw/view?usp=sharing" class="tile">DE.FI</a>
+        <a href="https://drive.google.com/file/d/1RJBw3HgmvfO-1Ewq8J_z-xQp-JgumWJt/view?usp=sharing" class="tile">Skynet Certik Audit</a>
+        <a href="https://drive.google.com/file/d/1tbNpoKqXCQy-QpLuKKAfwuOUZ2iVeXoq/view?usp=sharing" class="tile">Virus Total Audit</a>
+    </div>
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/rqpMrf2b2h8?autoplay=1&loop=1&playlist=rqpMrf2b2h8&muted=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="trends"></div>
+</main>
+<footer>
+    <p>Follow us on:</p>
+    <a href="https://x.com/xforstartarcoin">X</a>
+    <a href="https://www.facebook.com/startarcoins/">Meta</a>
+    <a href="https://t.me/gbtcryptohub">Telegram</a>
+    <a href="https://github.com/startar-bronze/khacngit">GitHub</a>
+    
+    <div>
+        <p>Powered by <a href="https://startar-bronze.github.io/groupebusinesstherapie/" style="color: white;">Groupe Business Thérapie</a></p>
+        <p>Visit us at <a href="https://khacn.startarcoins.com" style="color: white;">https://khacn.startarcoins.com</a></p>
+        <p>Email: <a href="mailto:notairebtc@yahoo.fr" style="color: white;">notairebtc@yahoo.fr</a></p>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <p class="global-access">khacn is accessible globally except in unauthorized jurisdictions. (c)</p>
+    </div>
+</footer>
+<div class="chatbot-icon" id="chatbot-icon">
+    <img src="https://github.com/startar-bronze/khacngit/raw/main/PNG%20KHAC%20LOGO.png" alt="Chatbot Icon">
+</div>
+<div class="chatbot-container" id="chatbot-container">
+    <div class="chatbot-header">
+        <span id="chatbot-title">Chatbot AI</span>
+        <button id="close-chatbot">X</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages"></div>
+    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Ask your question...">
+    <button class="chatbot-send" id="chatbot-send">Send</button>
+</div>
+<script>
+    // Ouvrir/Fermer le chatbot
+    const chatbotIcon = document.getElementById('chatbot-icon');
+    const chatbotContainer = document.getElementById('chatbot-container');
+    const closeChatbot = document.getElementById('close-chatbot');
+
+    chatbotIcon.addEventListener('click', () => {
+        chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
+    });
+
+    closeChatbot.addEventListener('click', () => {
+        chatbotContainer.style.display = 'none';
+    });
+
+    // Chatbot AI
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotSend = document.getElementById('chatbot-send');
+    const googleTranslateElement = document.getElementById('google-translate-element');
+    let currentLanguage = 'en'; // Langue de base en anglais
+
+    googleTranslateElement.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+        document.getElementById('chatbot-title').innerText = currentLanguage === 'en' ? 'Chatbot AI' : 'Assistant IA';
+        document.getElementById('chatbot-input').placeholder = currentLanguage === 'en' ? 'Ask your question...' : 'Posez votre question...';
+        document.getElementById('chatbot-send').innerText = currentLanguage === 'en' ? 'Send' : 'Envoyer';
+    });
+
+    chatbotSend.addEventListener('click', sendMessage);
+    chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    async function sendMessage() {
+        const message = chatbotInput.value.trim();
+        if (message) {
+            chatbotMessages.innerHTML += `<div style="text-align: right; margin-bottom: 10px;"><strong>${currentLanguage === 'en' ? 'You:' : 'Vous:'}</strong> ${message}</div>`;
+            chatbotInput.value = '';
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+            try {
+                const response = await fetch('https://your-vercel-domain.vercel.app/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message, language: currentLanguage })
+                });
+                const data = await response.json();
+                chatbotMessages.innerHTML += `<div style="text-align: left; margin-bottom: 10px;"><strong>${currentLanguage === 'en' ? 'Chatbot:' : 'Assistant:'}</strong> ${data.result}</div>`;
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            } catch (error) {
+                console.error('Error sending message:', error);
+                chatbotMessages.innerHTML += `<div style="text-align: left; margin-bottom: 10px;"><strong>${currentLanguage === 'en' ? 'Chatbot:' : 'Assistant:'}</strong> An error occurred. Please try again.</div>`;
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+        }
+    }
+
+    // Fetch des tendances
+    fetch('trending_keywords.json')
+        .then(response => response.json())
+        .then(data => {
+            const trendsContainer = document.getElementById('trends');
+            Object.entries(data).forEach(([country, keywords]) => {
+                const section = document.createElement('section');
+                section.innerHTML = `<h2>${currentLanguage === 'en' ? 'Trends in' : 'Tendances en'} ${country}</h2><ul>`;
+                keywords.forEach(keyword => {
+                    section.innerHTML += `<li>${keyword}</li>`;
+                });
+                section.innerHTML += '</ul>';
+                trendsContainer.appendChild(section);
+            });
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+</script>
+</body>
+</html>
