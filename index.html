@@ -99,97 +99,6 @@
             color: #00f;
             margin-top: 20px;
         }
-        .video-container {
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .video-container iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            border: none;
-        }
-        .chatbot-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: yellow;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-        .chatbot-icon img {
-            width: 40px;
-            height: 40px;
-        }
-        .chatbot-container {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background-color: black;
-            border: 2px solid yellow;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 1000;
-        }
-        .chatbot-header {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .chatbot-header button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .chatbot-messages {
-            height: 200px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            background-color: #111;
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-        }
-        .chatbot-input {
-            width: calc(100% - 22px);
-            padding: 10px;
-            border: 1px solid yellow;
-            border-radius: 5px;
-            background-color: #111;
-            color: white;
-        }
-        .chatbot-send {
-            width: 100%;
-            padding: 10px;
-            background-color: yellow;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: black;
-            font-weight: bold;
-        }
-        .chatbot-send:hover {
-            background-color: #ffcc00;
-        }
         @media (max-width: 768px) {
             .trade-button {
                 width: 80px;
@@ -199,20 +108,6 @@
             .tile {
                 max-width: 100%;
             }
-            .video-container iframe {
-                height: 300px;
-            }
-            .chatbot-icon {
-                width: 50px;
-                height: 50px;
-            }
-            .chatbot-icon img {
-                width: 30px;
-                height: 30px;
-            }
-            .chatbot-container {
-                width: 250px;
-            }
         }
     </style>
 </head>
@@ -221,10 +116,10 @@
     <img src="https://github.com/gbtprestige/khacncrypto/raw/main/PNG%20KHAC%20LOGO.png" alt="KharYsma Logo" class="logo">
     
     <nav>
-        <a href="https://khacn.startarcoins.com">HOME</a>
+        <a href="https://gbtprestige.github.io/khacncrypto/">HOME</a>
         <a href="https://drive.google.com/file/d/1Ph8RjQMvJNVqwGSQyB4QBvCOqi9ThqRP/view?usp=sharing">WHITE PAPER FR</a>
         <a href="https://drive.google.com/file/d/1SCbRneGewDMKv6B-eYZTZNpDuGaK7iVX/view?usp=sharing">WHITE PAPER US</a>
-        <a href="#">LEGAL OPINION</a>
+        <a href="https://drive.google.com/file/d/1SHJuhibLiRYMQVUqv6LyXazL-RSffkSE/view?usp=sharing">LEGAL OPINION</a>
         <a href="https://startar-bronze.github.io/accueil.html">ABOUT US</a>
         <a href="mailto:notairebtc@yahoo.fr">CONTACT</a>
         <a href="https://kharysmataste.blogspot.com/">NEWS / LISTING</a>
@@ -277,93 +172,21 @@
         <p>Powered by <a href="https://startar-bronze.github.io/groupebusinesstherapie/" style="color: white;">Groupe Business Thérapie</a></p>
         <p>Visit us at <a href="https://khacn.startarcoins.com" style="color: white;">https://khacn.startarcoins.com</a></p>
         <p>Email: <a href="mailto:notairebtc@yahoo.fr" style="color: white;">notairebtc@yahoo.fr</a></p>
+        <p>Email: <a href="mailto:contact@startarcoins.com" style="color: white;">contact@startarcoins.com</a></p>
     </div>
     
     <div style="margin-top: 20px;">
         <p class="global-access">khacn is accessible globally except in unauthorized jurisdictions. (c)</p>
     </div>
 </footer>
-<div class="chatbot-icon" id="chatbot-icon">
-    <img src="https://github.com/startar-bronze/khacngit/raw/main/PNG%20KHAC%20LOGO.png" alt="Chatbot Icon">
-</div>
-<div class="chatbot-container" id="chatbot-container">
-    <div class="chatbot-header">
-        <span id="chatbot-title">Chatbot AI</span>
-        <button id="close-chatbot">X</button>
-    </div>
-    <div class="chatbot-messages" id="chatbot-messages"></div>
-    <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Ask your question...">
-    <button class="chatbot-send" id="chatbot-send">Send</button>
-</div>
 <script>
-    // Ouvrir/Fermer le chatbot
-    const chatbotIcon = document.getElementById('chatbot-icon');
-    const chatbotContainer = document.getElementById('chatbot-container');
-    const closeChatbot = document.getElementById('close-chatbot');
-
-    chatbotIcon.addEventListener('click', () => {
-        chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
-    });
-
-    closeChatbot.addEventListener('click', () => {
-        chatbotContainer.style.display = 'none';
-    });
-
-    // Chatbot AI
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotSend = document.getElementById('chatbot-send');
-    const googleTranslateElement = document.getElementById('google-translate-element');
-    let currentLanguage = 'en'; // Langue de base en anglais
-
-    googleTranslateElement.addEventListener('click', () => {
-        currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-        document.getElementById('chatbot-title').innerText = currentLanguage === 'en' ? 'Chatbot AI' : 'Assistant IA';
-        document.getElementById('chatbot-input').placeholder = currentLanguage === 'en' ? 'Ask your question...' : 'Posez votre question...';
-        document.getElementById('chatbot-send').innerText = currentLanguage === 'en' ? 'Send' : 'Envoyer';
-    });
-
-    chatbotSend.addEventListener('click', sendMessage);
-    chatbotInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-
-    async function sendMessage() {
-        const message = chatbotInput.value.trim();
-        if (message) {
-            chatbotMessages.innerHTML += `<div style="text-align: right; margin-bottom: 10px;"><strong>${currentLanguage === 'en' ? 'You:' : 'Vous:'}</strong> ${message}</div>`;
-            chatbotInput.value = '';
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-
-            try {
-                const response = await fetch('/.netlify/functions/api/chat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ message, language: currentLanguage })
-                });
-                const data = await response.json();
-                chatbotMessages.innerHTML += `<div style="text-align: left; margin-bottom: 10px;"><strong>${currentLanguage === 'en' ? 'Chatbot:' : 'Assistant:'}</strong> ${data.result}</div>`;
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            } catch (error) {
-                console.error('Error sending message:', error);
-                chatbotMessages.innerHTML += `<div style="text-align: left; margin-bottom: 10px;"><strong>${currentLanguage === 'en' ? 'Chatbot:' : 'Assistant:'}</strong> An error occurred. Please try again.</div>`;
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            }
-        }
-    }
-
-    // Fetch des tendances
-    fetch('https://gbtprestige.github.io/khacncrypto/trending_keywords.json')
+    fetch('trending_keywords.json')
         .then(response => response.json())
         .then(data => {
             const trendsContainer = document.getElementById('trends');
             Object.entries(data).forEach(([country, keywords]) => {
                 const section = document.createElement('section');
-                section.innerHTML = `<h2>${currentLanguage === 'en' ? 'Trends in' : 'Tendances en'} ${country}</h2><ul>`;
+                section.innerHTML = `<h2>Tendances en ${country}</h2><ul>`;
                 keywords.forEach(keyword => {
                     section.innerHTML += `<li>${keyword}</li>`;
                 });
