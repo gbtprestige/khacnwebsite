@@ -196,7 +196,7 @@
     </div>
 </footer>
 <script>
-    fetch('trending_keywords.json')
+    fetch('https://gbtprestige.github.io/khacncrypto/trending_keywords.json')
         .then(response => response.json())
         .then(data => {
             const trendsContainer = document.getElementById('trends');
