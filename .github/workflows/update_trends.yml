@@ -31,4 +31,8 @@ jobs:
           git config --global user.email "contact@kharysma-an.fr"
           git add trending_keywords.json
           git commit -m "Update trends" || echo "No changes"
+
+      - name: Push changes
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/gbtprestige/khacnwebsite.git
           git push origin ${{ github.ref }}
