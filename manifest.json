@@ -7,12 +7,12 @@
     "theme_color": "#001f4d",
     "icons": [
         {
-            "src": "https://github.com/startar-bronze/khacngit/blob/main/PNG%20KHAC%20LOGO.png",
+            "src": "https://github.com/startar-bronze/khacngit/raw/main/PNG%20KHAC%20LOGO.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://github.com/startar-bronze/khacngit/blob/main/PNG%20KHAC%20LOGO.png",
+            "src": "https://github.com/startar-bronze/khacngit/raw/main/PNG%20KHAC%20LOGO.png",
             "sizes": "512x512",
             "type": "image/png"
         }
