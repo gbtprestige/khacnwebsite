@@ -1,0 +1,34 @@
+name: Update Trends
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Exécution tous les jours à 8h UTC
+  workflow_dispatch:  # Pour exécution manuelle
+
+jobs:
+  update-trends:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run the script
+        run: |
+          python get_trends.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "gbtprestige"
+          git config --global user.email "contact@kharysma-an.fr"
+          git add trending_keywords.json
+          git commit -m "Update trends" || echo "No changes"
+          git push origin ${{ github.ref }}
