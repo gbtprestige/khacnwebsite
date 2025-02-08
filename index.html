@@ -27,7 +27,7 @@
             text-align: center;
         }
         .logo {
-            max-width: 300px; /* Redimensionné à 2 fois la taille */
+            max-width: 150px;
             margin: 20px 0;
         }
         nav a {
@@ -46,15 +46,11 @@
         .trade-button {
             background-color: #4CAF50; /* Couleur verte comme feu vert */
             color: black;
-            padding: 20px;
-            border-radius: 50%;
+            padding: 20px 40px; /* Padding ajusté pour un rectangle */
+            border-radius: 10px; /* Rectangle au lieu de cercle */
             margin-top: 20px;
             text-decoration: none;
             display: inline-block;
-            width: 120px;
-            height: 120px;
-            line-height: 120px;
-            text-align: center;
             font-weight: bold;
             font-size: 16px;
             transition: transform 0.3s;
@@ -115,10 +111,8 @@
         }
         @media (max-width: 768px) {
             .trade-button {
-                width: 80px;
-                height: 80px;
-                line-height: 80px;
-                font-size: 14px; /* Diminuer la taille du texte pour qu'il rentre dans le cadre */
+                padding: 15px 30px; /* Padding ajusté pour mobile */
+                font-size: 14px; /* Diminuer la taille du texte pour qu'il rentre dans le rectangle */
             }
             .tile {
                 max-width: 100%;
@@ -155,7 +149,7 @@
     <h1>YOU ARE IN THE RIGHT PLACE FOR BUY/SELL/SWAP TRADE KHARYSMA COINS (KHACN)</h1>
     
     <div class="trade-container">
-        <a href="https://app.uniswap.org/explore/tokens/ethereum/0x11c1b94294a7967092f747434dee4876eca5fd53?utm_source=share-tdp&utm_medium=web" class="trade-button">TRADE KHACN</a>
+        <a href="https://app.uniswap.org/explore/tokens/ethereum/0x11c1b94294a7967092f747434dee4876eca5fd53?utm_source=share-tdp&utm_medium=web" class="trade-button">Uniswap/trade</a>
     </div>
     <div class="call-to-action" style="margin-top: 20px;">
         <a href="https://forms.gle/m8fJN3fpqxiFpNee9" class="tile" style="background-color: yellow; color: black; text-decoration: none;">
