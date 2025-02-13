@@ -76,6 +76,44 @@
             justify-content: flex-start;
             flex-wrap: wrap;
         }
+        .price-info {
+            background-color: yellow;
+            color: black;
+            padding: 20px;
+            border: 2px solid red;
+            border-radius: 10px;
+            margin: 20px auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            max-width: 300px;
+        }
+        .video-container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border: none;
+        }
+        .chart-container {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .chart-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border: none;
+        }
         footer {
             background-color: black;
             text-align: center;
@@ -96,31 +134,6 @@
             color: #00f;
             margin-top: 20px;
         }
-        .video-container {
-            background-color: #f0f0f0;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .video-container iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            border: none;
-        }
-        .price-info {
-            background-color: yellow;
-            color: black;
-            padding: 20px;
-            border: 2px solid red;
-            border-radius: 10px;
-            margin: 20px auto;
-            text-align: center;
-            font-weight: bold;
-            font-size: 18px;
-            max-width: 300px;
-        }
         @media (max-width: 768px) {
             .trade-button {
                 padding: 15px 30px; /* Padding ajusté pour mobile */
@@ -130,6 +143,9 @@
                 max-width: 100%;
             }
             .video-container iframe {
+                height: 300px;
+            }
+            .chart-container iframe {
                 height: 300px;
             }
             .price-info {
@@ -192,6 +208,9 @@
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/rqpMrf2b2h8?autoplay=1&loop=1&playlist=rqpMrf2b2h8&mute=0" frameborder="0" allowfullscreen></iframe>
     </div>
+    <div class="chart-container">
+        <iframe height="100%" width="100%" id="geckoterminal-embed" title="GeckoTerminal Embed" src="https://www.geckoterminal.com/eth/pools/0x18a3446a23dcc62744a4a97ca6b34734ac4155d9863c55976bc0d5799c436628?embed=1&info=1&swaps=1&grayscale=1&light_chart=0&chart_type=price&resolution=1w" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
+    </div>
     <div id="trends"></div>
 </main>
 <footer>
@@ -200,6 +219,7 @@
     <a href="https://www.facebook.com/startarcoins/">Meta</a>
     <a href="https://t.me/gbtcryptohub">Telegram</a>
     <a href="https://github.com/startar-bronze/khacngit">GitHub</a>
+    <a href="https://www.geckoterminal.com/eth/pools/0x18a3446a23dcc62744a4a97ca6b34734ac4155d9863c55976bc0d5799c436628">Geckoterminal</a>
     
     <div>
         <p>Powered by <a href="https://startar-bronze.github.io/groupebusinesstherapie/" style="color: white;">Groupe Business Thérapie</a></p>
